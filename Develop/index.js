@@ -96,7 +96,7 @@ ${answers.license}
 Please email ${answers.email} to contact me.
 ### GitHub 
 Username: ${answers.gitHubUsername}
-Profile: ${answers.gitHubProfile}`;
+Profile: ${answers.gitHubLink}`;
 
 
 // Created a function to initialize app
