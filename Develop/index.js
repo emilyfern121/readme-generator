@@ -66,17 +66,7 @@ const promptUser = () => {
 };
 
 
-// ).then(({
-//     projectTitle,
-//     description,
-//     installation,
-//     usage,
-//     contribution,
-//     test,
-//     license,
-//     gitHubUsername,
-//     gitHubProfile,
-//     email
+// README template
 
 const generateREADME = (answers) => 
 
@@ -84,14 +74,15 @@ const generateREADME = (answers) =>
 
 #TABLE OF CONTENTS
 * [Description](#description)
-* [Installation](#instalation)
+* [Installation](#installation)
 * [Usage](#usage)
 * [Contributing](#contribution)
 * [Tests](#test)
 * [Questions](#email)
-## DESCRIPTION
+
+## DESCRIPTION 
 ${answers.description}
-## INSTALATION
+## INSTALLATION 
 ${answers.installation}
 ## USAGE
 ${answers.usage}
@@ -106,55 +97,9 @@ Please email ${answers.email} to contact me.
 ### GitHub 
 Username: ${answers.gitHubUsername}
 Profile: ${answers.gitHubProfile}`;
-        
-//         createNewFile(title,generateREADME);
-// });
-// }
 
-// function createNewFile(fileName,data){
 
-//     fs.writeFile(`./${fileName.toLowerCase().split(' ').join('')}.md`,data,(err)=>{
-//         if(err){
-//             console.log(err)
-//         }
-//         console.log("Your README file has been generated!");
-//     })
-// }
- 
-// TODO: Create a function to write README file
-
-// const generateREADME = (answers) =>
-//     `# ${answers.projectTitle}
-    
-//     ## DESCRIPTION
-//     ${$answers.description}
-//     ## INSTALATION
-//     ${answers.installation}
-//     ## USAGE
-//     ${answers.usage}
-//     ## CONTRIBUTION
-//     ${answers.contribution}
-//     ## TEST INSTRUCTIONS
-//     ${answers.test}
-//     ## License
-//     ${answers.license}
-//     ## GitHub 
-//     ${answers.gitHubUsername}
-//     ${answers.gitHubProfile}
-//     ## Questions?
-//     Please email ${answers.email} to contact me.`
-
-// fs.writeFile("README.txt","test file",funtion(error,data) { 
-//     if(error) {
-//         console.log("There was an error saving the file!");
-//     } else {
-//         console.log("File saved successfully!");
-//     }
-// })
-
-// TODO: Create a function to initialize app
-// function init() {}
-
+// Created a function to initialize app
 const init = () => {
     promptUser()
       .then((answers) => writeFileAsync('README.md', generateREADME(answers)))
