@@ -25,3 +25,6 @@ Please email emilyfern121@gmail.com to contact me.
 ### GitHub 
 Username: emilyfern121
 Profile: github.com/emilyfern121
+
+## Video Demo
+https://user-images.githubusercontent.com/79679121/117558155-af4b1780-b048-11eb-8d91-90da827f2f5c.mp4
