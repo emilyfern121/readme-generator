@@ -62,52 +62,64 @@ const promptUser = () => {
         name:"email",
         message:"Enter your email address"
     },
-]
-).then(({
-    projectTitle,
-    description,
-    installation,
-    usage,
-    contribution,
-    test,
-    license,
-    gitHubUsername,
-    gitHubProfile,
-    email
-})=>{
-    const generateREADME = `# ${projectTitle}
-        
-        ## DESCRIPTION
-        ${description}
-        ## INSTALATION
-        ${installation}
-        ## USAGE
-        ${usage}
-        ## CONTRIBUTION
-        ${contribution}
-        ## TEST INSTRUCTIONS
-        ${test}
-        ## License
-        ${license}
-        ## GitHub 
-        ${gitHubUsername}
-        ${gitHubProfile}
-        ## Questions?
-        Please email ${email} to contact me.`;
-        
-        createNewFile(title,generateREADME);
-});
-}
+]);
+};
 
-function createNewFile(fileName,data){
 
-    fs.writeFile(`./${fileName.toLowerCase().split(' ').join('')}.md`,data,(err)=>{
-        if(err){
-            console.log(err)
-        }
-        console.log("Your README file has been generated!");
-    })
-}
+// ).then(({
+//     projectTitle,
+//     description,
+//     installation,
+//     usage,
+//     contribution,
+//     test,
+//     license,
+//     gitHubUsername,
+//     gitHubProfile,
+//     email
+
+const generateREADME = (answers) => 
+
+`# ${answers.projectTitle}
+
+#TABLE OF CONTENTS
+* [Description](#description)
+* [Installation](#instalation)
+* [Usage](#usage)
+* [Contributing](#contribution)
+* [Tests](#test)
+* [Questions](#email)
+## DESCRIPTION
+${answers.description}
+## INSTALATION
+${answers.installation}
+## USAGE
+${answers.usage}
+## CONTRIBUTING
+${answers.contribution}
+## TESTS
+${answers.test}
+## License
+${answers.license}
+## Questions?
+Please email ${answers.email} to contact me.
+### GitHub 
+Username: ${answers.gitHubUsername}
+Profile: ${answers.gitHubProfile}`;
+        
+//         createNewFile(title,generateREADME);
+// });
+// }
+
+// function createNewFile(fileName,data){
+
+//     fs.writeFile(`./${fileName.toLowerCase().split(' ').join('')}.md`,data,(err)=>{
+//         if(err){
+//             console.log(err)
+//         }
+//         console.log("Your README file has been generated!");
+//     })
+// }
  
 // TODO: Create a function to write README file
 
@@ -143,12 +155,12 @@ function createNewFile(fileName,data){
 // TODO: Create a function to initialize app
 // function init() {}
 
-// const init = () => {
-//     promptUser()
-//       .then((answers) => writeFileAsync('README.md', generateREADME(answers)))
-//       .then(() => console.log('Successfully wrote to README.md'))
-//       .catch((err) => console.error(err));
-//   };
+const init = () => {
+    promptUser()
+      .then((answers) => writeFileAsync('README.md', generateREADME(answers)))
+      .then(() => console.log('Successfully wrote to README.md'))
+      .catch((err) => console.error(err));
+  };
 
-// // Function call to initialize app
-// init();
+// Function call to initialize app
+init();
