@@ -76,9 +76,9 @@ const generateREADME = (answers) =>
 * [Description](#description)
 * [Installation](#installation)
 * [Usage](#usage)
-* [Contributing](#contribution)
-* [Tests](#test)
-* [Questions](#email)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
 
 ## DESCRIPTION 
 ${answers.description}
